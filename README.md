@@ -38,12 +38,6 @@ A secure, feature-rich banking application built with Java and Spring Boot.
    mvn spring-boot:run
    ```
 
-### Running Tests 🧪
-Run unit tests using:
-```bash
-mvn test
-```
-
 ## Contributing 🤝
 Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.
 

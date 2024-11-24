@@ -1,18 +1,22 @@
 
-# Banking System Application  🏦
+# Banking System Application 🏦
 
-A secure, feature-rich banking application built with Java and Spring Boot.  
+A secure, feature-rich banking application built with Java and Spring Boot.
 
 ## Features 🛠️
 - User authentication and role-based access.
 - Account management and transaction features.
-- Currency conversion and online shopping services.
-- Secure communication via email notifications. 📧
+- Currency conversion for international transactions 💱.
+- Online shopping services for in-app purchases 🛍️.
+- Secure communication via email notifications 📧.
+- Multi-currency support 🌍.
+- Identity protection features (e.g., tax number and ID verification) 🔒.
+- IP address tracking for secure logins 🖥️.
 
 ## Project Structure 🗂️
 - **Controllers**: Manage HTTP requests.
 - **Services**: Core business logic.
-- **Entities**: Database entities (e.g., Account, User).
+- **Entities**: Database entities (e.g., Account, User, VerificationToken).
 - **Repositories**: Data access layer.
 
 ## Getting Started 🚀
@@ -37,6 +41,7 @@ A secure, feature-rich banking application built with Java and Spring Boot.
    mvn clean install
    mvn spring-boot:run
    ```
+
 
 ## Contributing 🤝
 Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.

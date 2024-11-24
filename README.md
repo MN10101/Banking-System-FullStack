@@ -24,17 +24,23 @@ A secure, feature-rich banking application built with Java and Spring Boot.
 - Identity protection features (e.g., tax number and ID verification) 🔒.
 - IP address tracking for secure logins 🖥️.
 
+---
+
 ## Project Structure 🗂️
 - **Controllers**: Manage HTTP requests.
 - **Services**: Core business logic.
 - **Entities**: Database entities (e.g., Account, User, VerificationToken).
 - **Repositories**: Data access layer.
 
+---
+
 ## Getting Started 🚀
 ### Prerequisites 📋
 - Java 11 or higher.
 - Maven 3.x.
 - MySQL for the database.
+
+---
 
 ### Installation 🔧
 1. Clone the repository:
@@ -52,7 +58,7 @@ A secure, feature-rich banking application built with Java and Spring Boot.
    mvn clean install
    mvn spring-boot:run
    ```
-
+---
 
 ## Contributing 🤝
 Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.

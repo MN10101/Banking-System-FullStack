@@ -1,27 +1,27 @@
 
-# Banking System Application  
+# Banking System Application  🏦
 
 A secure, feature-rich banking application built with Java and Spring Boot.  
 
-## Features
+## Features 🛠️
 - User authentication and role-based access.
 - Account management and transaction features.
 - Currency conversion and online shopping services.
-- Secure communication via email notifications.
+- Secure communication via email notifications. 📧
 
-## Project Structure
+## Project Structure 🗂️
 - **Controllers**: Manage HTTP requests.
 - **Services**: Core business logic.
 - **Entities**: Database entities (e.g., Account, User).
 - **Repositories**: Data access layer.
 
-## Getting Started
-### Prerequisites
+## Getting Started 🚀
+### Prerequisites 📋
 - Java 11 or higher.
 - Maven 3.x.
 - MySQL for the database.
 
-### Installation
+### Installation 🔧
 1. Clone the repository:
    ```bash
    git clone <https://github.com/MN10101/Banking-System.git>
@@ -38,14 +38,13 @@ A secure, feature-rich banking application built with Java and Spring Boot.
    mvn spring-boot:run
    ```
 
-### Running Tests
+### Running Tests 🧪
 Run unit tests using:
 ```bash
 mvn test
 ```
 
-## Contributing
+## Contributing 🤝
 Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+Contact: mn.de@outlook.com 📧

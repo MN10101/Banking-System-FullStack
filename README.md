@@ -29,9 +29,12 @@ A secure, feature-rich banking application built with Java and Spring Boot.
 
 ## Project Structure 🗂️
 - **Controllers**: Manage HTTP requests.
-- **Services**: Core business logic.
+- **DTO (Data Transfer Objects)**: Define the data format for communication between client and server.
 - **Entities**: Database entities (e.g., Account, User, VerificationToken).
 - **Repositories**: Data access layer.
+- **Security**: Contains configurations for securing the application, Websocket configurations.
+- **Services**: Encapsulate the core business logic.
+- **Util**:  Helper functions and utilities, like email etc.
 
 ---
 
@@ -39,7 +42,8 @@ A secure, feature-rich banking application built with Java and Spring Boot.
 ### Prerequisites 📋
 - Java 11 or higher.
 - Maven 3.x.
-- MySQL for the database.
+- MySQL/Hibernate for the database.
+- Websocket for real-time update.
 
 ---
 

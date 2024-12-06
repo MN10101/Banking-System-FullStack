@@ -20,6 +20,7 @@ A secure, feature-rich banking application built with Java and Spring Boot.
 - Currency conversion for international transactions 💱.
 - Online shopping services for in-app purchases 🛍️.
 - Secure communication via email notifications 📧.
+- Verify the account via email address ✔️.
 - Multi-currency support 🌍.
 - Identity protection features (e.g., tax number and ID verification) 🔒.
 - IP address tracking for secure logins 🖥️.

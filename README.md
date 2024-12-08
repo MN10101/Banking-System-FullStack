@@ -1,30 +1,56 @@
 
-# Banking System Application  
+# Banking System Application 🏦
 
-A secure, feature-rich banking application built with Java and Spring Boot.  
+A secure, feature-rich banking application built with Java and Spring Boot.
 
-## Features
-- User authentication and role-based access.
-- Account management and transaction features.
-- Currency conversion and online shopping services.
-- Secure communication via email notifications.
+---
 
-## Project Structure
+
+# Author
+-  Mahmoud Najmeh
+
+
+<img src="https://avatars.githubusercontent.com/u/78208459?u=c3f9c7d6b49fc9726c5ea8bce260656bcb9654b3&v=4" width="200px" style="border-radius: 50%;">
+
+---
+
+## Features 🛠️
+- User authentication and role-based access🔒.
+- Account management and transaction features 💸 🧑‍💼.
+- Currency conversion for international transactions 💱.
+- Online shopping services for in-app purchases 🛍️.
+- Secure communication via email notifications 📧.
+- Verify the account via email address ✔️.
+- Multi-currency support 🌍.
+- Identity protection features (e.g., tax number and ID verification) 🔒.
+- IP address tracking for secure logins 🖥️.
+
+---
+
+## Project Structure 🗂️
 - **Controllers**: Manage HTTP requests.
-- **Services**: Core business logic.
-- **Entities**: Database entities (e.g., Account, User).
+- **DTO (Data Transfer Objects)**: Define the data format for communication between client and server.
+- **Entities**: Database entities (e.g., Account, User, VerificationToken).
 - **Repositories**: Data access layer.
+- **Security**: Contains configurations for securing the application, Websocket configurations.
+- **Services**: Encapsulate the core business logic.
+- **Util**:  Helper functions and utilities, like email etc.
 
-## Getting Started
-### Prerequisites
+---
+
+## Getting Started 🚀
+### Prerequisites 📋
 - Java 11 or higher.
 - Maven 3.x.
-- MySQL for the database.
+- MySQL/Hibernate for the database.
+- Websocket for real-time update.
 
-### Installation
+---
+
+### Installation 🔧
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/MN10101/Banking-System.git>
    cd banking-system
    ```
 2. Import the project into your favorite IDE (e.g., IntelliJ, Eclipse).
@@ -37,15 +63,9 @@ A secure, feature-rich banking application built with Java and Spring Boot.
    mvn clean install
    mvn spring-boot:run
    ```
+---
 
-### Running Tests
-Run unit tests using:
-```bash
-mvn test
-```
-
-## Contributing
+## Contributing 🤝
 Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+Contact: mn.de@outlook.com 📧

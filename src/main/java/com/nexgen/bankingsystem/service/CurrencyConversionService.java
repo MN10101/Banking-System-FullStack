@@ -16,12 +16,23 @@ public class CurrencyConversionService {
     private RestTemplate restTemplate;
 
     public double getConversionRate(String fromCurrency, String toCurrency) {
-        URI uri = UriComponentsBuilder.fromHttpUrl(API_URL + fromCurrency).build().toUri();
-        ExchangeRateResponse response = restTemplate.getForObject(uri, ExchangeRateResponse.class);
+        try {
+            URI uri = UriComponentsBuilder.fromHttpUrl(API_URL + fromCurrency).build().toUri();
+            System.out.println("Fetching from URL: " + uri);
+            ExchangeRateResponse response = restTemplate.getForObject(uri, ExchangeRateResponse.class);
 
-        if (response != null && response.getRates().containsKey(toCurrency)) {
-            return response.getRates().get(toCurrency);
+            if (response != null && response.getRates().containsKey(toCurrency)) {
+                System.out.println("Rates fetched: " + response.getRates());
+                return response.getRates().get(toCurrency);
+            } else {
+                throw new RuntimeException("Conversion rate not found for " + fromCurrency + " to " + toCurrency);
+            }
+        } catch (Exception e) {
+            System.err.println("Error fetching conversion rate: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Unable to fetch conversion rate: " + e.getMessage());
         }
-        throw new RuntimeException("Unable to fetch conversion rate");
     }
+
 }
+

@@ -1,8 +1,12 @@
 package com.nexgen.bankingsystem.controller;
 
 import com.nexgen.bankingsystem.entity.User;
+import com.nexgen.bankingsystem.service.IPDetectionService;
 import com.nexgen.bankingsystem.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +21,24 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private IPDetectionService ipDetectionService;
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+
+
     // Create a new user
     @PostMapping
-    public ResponseEntity<User> registerUser(@Valid @RequestBody User user) {
+    public ResponseEntity<User> registerUser(@Valid @RequestBody User user, HttpServletRequest request) {
+        String clientIP = ipDetectionService.getClientIP(request);
+        String locationInfo = ipDetectionService.getLocationFromIP(clientIP);
+        logger.info("User registration from IP: {} - Location: {}", clientIP, locationInfo);
+
         User createdUser = userService.registerUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
     }
+
 
     // Get user by ID
     @GetMapping("/{id}")

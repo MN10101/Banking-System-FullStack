@@ -2,6 +2,7 @@ package com.nexgen.bankingsystem.service;
 
 import com.nexgen.bankingsystem.entity.User;
 import com.nexgen.bankingsystem.repository.UserRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,14 +21,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private AccountService accountService;
 
+    @Transactional
     @Override
     public User registerUser(User user) {
         // Save user first
         User savedUser = userRepository.save(user);
 
-        // Automatically create a default account
+        // Automatically create a default account with IBAN generation
         accountService.createAccount(savedUser, null, 0.0);
 
+        // Encrypt password before saving
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         return savedUser;

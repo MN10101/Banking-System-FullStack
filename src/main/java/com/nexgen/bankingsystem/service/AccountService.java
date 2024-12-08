@@ -11,4 +11,12 @@ public interface AccountService {
     boolean withdraw(String accountNumber, double amount);
     boolean convertCurrency(String accountNumber, String fromCurrency, String toCurrency, double amount);
     boolean transferMoney(String fromAccount, String toAccount, double amount, String currency);
+
+    // Add method to get IBAN by account number
+    Optional<String> findIbanByAccountNumber(String accountNumber);
+
+    Optional<Account> findAccountByIban(String iban);
+
+
 }
+

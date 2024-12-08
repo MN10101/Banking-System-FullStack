@@ -19,9 +19,11 @@ public class User {
     private String email;
 
     @NotBlank(message = "First name is required")
+    @Column(name = "first_name")
     private String firstName;
 
     @NotBlank(message = "Last name is required")
+    @Column(name = "last_name")
     private String lastName;
 
     @Min(value = 18, message = "Age must be at least 18")
@@ -48,13 +50,17 @@ public class User {
 
     private boolean enabled = false;
 
+    private String lastKnownIP;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Account> accounts;
+
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role")
     private Set<String> roles = new HashSet<>();
+
 
     public User() {}
 
@@ -194,5 +200,13 @@ public class User {
 
     public void setRoles(Set<String> roles) {
         this.roles = roles;
+    }
+
+    public String getLastKnownIP() {
+        return lastKnownIP;
+    }
+
+    public void setLastKnownIP(String lastKnownIP) {
+        this.lastKnownIP = lastKnownIP;
     }
 }

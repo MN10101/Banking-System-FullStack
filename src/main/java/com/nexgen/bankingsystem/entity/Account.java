@@ -18,6 +18,10 @@ public class Account {
     @Size(min = 10, max = 12, message = "Account number must be between 10 and 12 characters")
     private String accountNumber;
 
+    @NotBlank(message = "IBAN cannot be blank")
+    @Pattern(regexp = "^DE[0-9]{20}$", message = "IBAN must be a valid German IBAN starting with 'DE' and 22 characters long")
+    private String iban;
+
     @DecimalMin(value = "0.0", inclusive = true, message = "Balance cannot be negative")
     private double balance;
 
@@ -27,9 +31,10 @@ public class Account {
 
     public Account() {}
 
-    public Account(User user, String accountNumber, double balance, String currency) {
+    public Account(User user, String accountNumber, String iban, double balance, String currency) {
         this.user = user;
         this.accountNumber = accountNumber;
+        this.iban = iban;
         this.balance = balance;
         this.currency = currency;
     }
@@ -58,6 +63,14 @@ public class Account {
 
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
+    }
+
+    public String getIban() {
+        return iban;
+    }
+
+    public void setIban(String iban) {
+        this.iban = iban;
     }
 
     public double getBalance() {

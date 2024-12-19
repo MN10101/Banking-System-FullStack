@@ -23,7 +23,7 @@ import java.util.Optional;
 import java.util.regex.Pattern;
 
 
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -112,7 +112,6 @@ public class AuthController {
         userService.saveUser(user);
         return ResponseEntity.ok(Map.of("message", "Your account has been successfully verified!"));
     }
-
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody Map<String, String> credentials, HttpServletRequest request) {

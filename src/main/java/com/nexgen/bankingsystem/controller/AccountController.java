@@ -44,7 +44,7 @@ public class AccountController {
         String locationInfo = ipDetectionService.getLocationFromIP(clientIP);
         logger.info("Account creation request from IP: {} - Location: {}", clientIP, locationInfo);
 
-        // Existing logic remains unchanged
+
         if (email == null || email.isEmpty()) {
             return ResponseEntity.badRequest().body("Email is required.");
         }

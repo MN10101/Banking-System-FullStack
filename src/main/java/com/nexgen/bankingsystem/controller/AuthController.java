@@ -10,16 +10,12 @@ import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import com.nexgen.bankingsystem.service.IPDetectionService;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+
+import java.util.*;
 import java.util.regex.Pattern;
 
 
@@ -73,6 +69,11 @@ public class AuthController {
             if (!Pattern.matches(IBAN_REGEX, account.getIban())) {
                 return ResponseEntity.badRequest().body("IBAN must be a valid German IBAN starting with 'DE' and 22 characters long.");
             }
+        }
+
+
+        if (user.getRoles() == null || user.getRoles().isEmpty()) {
+            user.setRoles(new HashSet<>(Arrays.asList("ROLE_USER")));
         }
 
         // Register the user

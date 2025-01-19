@@ -42,8 +42,6 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
-
-
     private String generateAccountNumber() {
         return "NEX" + (int)(Math.random() * 1_000_000_000);
     }
@@ -62,33 +60,24 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
-
     @Override
     public Account createAccount(User user, String accountNumber, double initialBalance) {
         if (initialBalance < 0) {
             throw new IllegalArgumentException("Initial balance cannot be negative.");
         }
 
-        if (accountNumber == null || accountNumber.isEmpty()) {
-            accountNumber = generateAccountNumber();
-        }
-
-        // Generate IBAN (this example assumes a simple structure, adjust as needed)
-        String iban = generateIban(accountNumber);
-
-        // Validate IBAN before saving
-        if (!isValidIban(iban)) {
-            throw new IllegalArgumentException("Generated IBAN is invalid: " + iban);
-        }
-
         Account account = new Account();
-        account.setAccountNumber(accountNumber);
+        account.setAccountNumber(generateAccountNumber());
         account.setBalance(initialBalance);
         account.setCurrency("EUR");
         account.setUser(user);
-        account.setIban(iban);
+        account.setIban(generateIban(account.getAccountNumber()));
 
-        logger.debug("Saving account: {} with IBAN: {} for user: {}", accountNumber, iban, user.getEmail());
+        // Validate IBAN before saving
+        if (!isValidIban(account.getIban())) {
+            throw new IllegalArgumentException("Generated IBAN is invalid: " + account.getIban());
+        }
+
         return accountRepository.save(account);
     }
 

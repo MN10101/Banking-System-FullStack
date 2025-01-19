@@ -24,14 +24,19 @@ public class UserServiceImpl implements UserService {
     @Transactional
     @Override
     public User registerUser(User user) {
+        // Encrypt password before saving
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        // Add a default role if none are specified
+        if (user.getRoles().isEmpty()) {
+            user.getRoles().add("ROLE_USER");
+        }
+
         // Save user first
         User savedUser = userRepository.save(user);
 
         // Automatically create a default account with IBAN generation
         accountService.createAccount(savedUser, null, 0.0);
-
-        // Encrypt password before saving
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         return savedUser;
     }

@@ -74,10 +74,4 @@ public class ShoppingController {
         logger.info("PayPal payment canceled by the user.");
         return ResponseEntity.ok("Payment canceled.");
     }
-
-
-
-
-
-
 }

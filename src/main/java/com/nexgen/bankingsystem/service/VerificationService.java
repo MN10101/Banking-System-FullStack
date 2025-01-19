@@ -35,4 +35,6 @@ public class VerificationService {
     public VerificationToken getVerificationToken(String token) {
         return tokenRepository.findByToken(token);
     }
+
+
 }

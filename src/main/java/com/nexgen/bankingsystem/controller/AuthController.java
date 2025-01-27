@@ -96,7 +96,7 @@ public class AuthController {
         emailUtil.sendHtmlMessage(user.getEmail(), "Account Verification", htmlContent);
 
         // Create an initial account for the registered user
-        accountService.createAccount(registeredUser, null, 0.0);
+//        accountService.createAccount(registeredUser, null, 0.0);
 
         return ResponseEntity.ok("User registered successfully. Check your email for verification instructions.");
     }

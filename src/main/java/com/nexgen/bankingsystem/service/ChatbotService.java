@@ -12,12 +12,6 @@ import java.util.Optional;
 @Service
 public class ChatbotService {
 
-    @Autowired
-    private AccountRepository accountRepository;
-
-    @Autowired
-    private EmailUtil emailUtil;
-
     public String getResponse(String userMessage) {
         try {
             // Decode the user message to handle URL-encoded characters
@@ -33,7 +27,7 @@ public class ChatbotService {
             return "Hi you, how are you doing today? 😃";
         }
         if (userMessage.contains("I'm fine thanks, how about you?")) {
-            return "I'm doing great thanks. 🥰";
+            return "I'm doing great, thanks!. 🥰";
         }
         if (userMessage.contains("create account")) {
             return "To create an account, you'll need to provide your email and some account details. ✨";
@@ -61,6 +55,9 @@ public class ChatbotService {
         if (userMessage.contains("transfer money")) {
             return "Go to 'Send Money', provide the recipient's IBAN and the amount, then press 'Transfer'. 🤑";
             }
+        if (userMessage.contains("reset my password")) {
+            return "Contact our support team at nexgin.bank@gmail.com. 🗝️";
+        }
 
         return "Sorry, I didn't quite understand that. Can you rephrase your question? ❌";
     }

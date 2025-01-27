@@ -2,10 +2,8 @@ package com.nexgen.bankingsystem.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 
 @Entity
 public class User {
@@ -53,7 +51,7 @@ public class User {
     private String lastKnownIP;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Account> accounts;
+    private List<Account> accounts = new ArrayList<>();
 
 
     @ElementCollection(fetch = FetchType.EAGER)

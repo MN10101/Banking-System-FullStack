@@ -40,8 +40,7 @@ A secure, feature rich banking application built with Java and Spring Boot.
 ### Installation 🔧
 1. Clone the repository:
    ```bash
-   git clone <https://github.com/MN10101/Banking-System.git>
-   cd banking-system
+   git clone <https://github.com/MN10101/Banking-System-Backend.git>
    ```
 2. Import the project into your favorite IDE (e.g., IntelliJ, Eclipse).
 3. Configure the database:

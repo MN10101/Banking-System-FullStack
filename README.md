@@ -61,6 +61,5 @@ mvn test
 
 Contact: mn.de@outlook.com 📧
 
-License 🖍️
-
-This project is licensed under the MIT License.
+## License
+This project is licensed under the [MIT License]([LICENSE](https://github.com/MN10101/Banking-System-Backend?tab=MIT-1-ov-file)).

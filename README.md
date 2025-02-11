@@ -44,7 +44,7 @@ A secure, feature rich banking application built with Java and Spring Boot.
    ```
 2. Import the project into your favorite IDE (e.g., IntelliJ, Eclipse).
 3. Configure the database:
-   - Create a MySQL database using `bankingdb.sql`.
+   - Create a MySQL database using `nexgindb.sql`.
    - Update `application.properties` with database credentials.
 
 4. Build and run:
@@ -58,9 +58,6 @@ Run unit tests using:
 ```bash
 mvn test
 ```
-
-## Contributing 🤝
-Feel free to fork and create pull requests. For significant changes, please open an issue first to discuss.
 
 Contact: mn.de@outlook.com 📧
 

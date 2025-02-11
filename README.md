@@ -61,3 +61,6 @@ mvn test
 
 Contact: mn.de@outlook.com 📧
 
+License 🖍️
+
+This project is licensed under the MIT License.

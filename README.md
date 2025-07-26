@@ -57,7 +57,7 @@ mvn test
 ```
 
 #### License
-MIT License - [View Backend License](https://github.com/MN10101/Banking-System-Backend?tab=MIT-1-ov-file)
+MIT License - [View License](https://github.com/MN10101/Banking-System-Backend?tab=MIT-1-ov-file)
 
 ---
 
@@ -102,7 +102,7 @@ App runs at `http://localhost:3000`
 - `npm run build` - Build app for production  
 
 #### License
-MIT License - [View Frontend License](https://github.com/MN10101/Banking-System-Frontend?tab=MIT-1-ov-file)
+MIT License - [View License](https://github.com/MN10101/Banking-System-Frontend?tab=MIT-1-ov-file)
 
 ---
 

@@ -5,7 +5,7 @@ A secure, full-featured banking system with both backend and frontend components
 
 ## Author
 **Mahmoud Najmeh**  
-![Author](https://avatars.githubusercontent.com/u/78208459?u=c3f9c7d6b49fc9726c5ea8bce260656bcb9654b3&v=4)
+<img src="https://avatars.githubusercontent.com/u/78208459?u=c3f9c7d6b49fc9726c5ea8bce260656bcb9654b3&v=4" width="200px" style="border-radius: 50%;">
 
 ---
 

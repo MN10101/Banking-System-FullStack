@@ -1,0 +1,91 @@
+.settings-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .settings-content {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .settings-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .settings-section {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .settings-section h3 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .settings-label {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .settings-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .settings-actions {
+    margin-top: 20px;
+  }
+  
+  .save-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .settings-content {
+      margin: 10px;
+      padding: 15px;
+    }
+  
+    .settings-title {
+      font-size: 24px;
+    }
+  
+    .settings-label {
+      font-size: 16px;
+    }
+  
+    .save-button {
+      font-size: 16px;
+    }
+  }
+  

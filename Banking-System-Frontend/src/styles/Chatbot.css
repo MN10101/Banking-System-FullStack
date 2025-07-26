@@ -1,0 +1,120 @@
+.chatbot-container {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.chatbot-container.open {
+  display: flex; 
+  transform: translateY(-50%) scale(1);
+}
+
+.chatbot-header {
+  background-color: #e74c3c;
+  padding: 10px;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  position: relative;
+}
+
+.chatbot-header h2 {
+  margin: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.message.user {
+  background-color: #d1e7fe;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background-color: #f1f1f1;
+  align-self: flex-start;
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chatbot-input input {
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+.chatbot-input button {
+  padding: 8px 16px;
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chatbot-input button:hover {
+  background-color: #c0392b;
+}
+
+.chatbot-btn {
+  position: fixed;
+  top: 60%;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  transform: translateY(-50%);
+}
+
+.chatbot-btn.open {
+  top: 83%; 
+}
+
+.chatbot-btn:hover {
+  background-color: #c0392b;
+}

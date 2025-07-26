@@ -1,0 +1,31 @@
+/* Scroll-Up Button */
+#scrollUpBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    width: 50px; 
+    height: 50px; 
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+#scrollUpBtn:hover {
+    background-color: #c0392b; 
+    transform: scale(1.1); 
+}
+
+/* Make button visible when the user scrolls down */
+body.scrolled #scrollUpBtn {
+    display: flex; 
+}

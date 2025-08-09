@@ -8,11 +8,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
-
 import java.sql.Date;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,7 +28,7 @@ public class AdminControllerTest {
     }
 
     @Test
-    public void testGetAllUsers_Success() {
+    public void getsAllUsers() {
         // Create mock User objects
         User user1 = new User("mn.de@outlook.com", "Mahmoud", "Najmeh", 33, "Müllenhoffstr.16, 10967 Berlin",
                 Date.valueOf("1988-07-19"), "01639769764", "password1", "123456", "NEX324939864");
@@ -52,10 +50,8 @@ public class AdminControllerTest {
         assertEquals(users, response.getBody());
     }
 
-
-
     @Test
-    public void testGetAllUsers_InternalError() {
+    public void failsToGetUsersOnError() {
         // Mock UserService to throw an exception
         when(userService.findAllUsers()).thenThrow(new RuntimeException("Database error"));
 
@@ -68,7 +64,7 @@ public class AdminControllerTest {
     }
 
     @Test
-    public void testDeleteUser_Success() {
+    public void deletesUser() {
         Long userId = 1L;
 
         // Mock UserService to simulate successful deletion
@@ -83,7 +79,7 @@ public class AdminControllerTest {
     }
 
     @Test
-    public void testDeleteUser_UserNotFound() {
+    public void failsToDeleteUserIfMissing() {
         Long userId = 1L;
 
         // Mock UserService to simulate that the user wasn't found
@@ -98,7 +94,7 @@ public class AdminControllerTest {
     }
 
     @Test
-    public void testDeleteUser_InternalError() {
+    public void failsToDeleteUserOnError() {
         Long userId = 1L;
 
         // Mock UserService to simulate an exception

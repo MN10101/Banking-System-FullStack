@@ -57,7 +57,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testCreateAccount_Success() {
+    public void createsAccount() {
         // Mock UserService to return an existing user
         when(userService.findUserByEmail(anyString())).thenReturn(Optional.of(user));
         when(accountService.createAccount(any(User.class), anyString(), anyDouble())).thenReturn(account);
@@ -69,7 +69,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testCreateAccount_UserNotFound() {
+    public void failsToCreateAccountIfUserMissing() {
         // Mock UserService to return an empty optional (user not found)
         when(userService.findUserByEmail(anyString())).thenReturn(Optional.empty());
 
@@ -80,7 +80,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testDeposit_Success() {
+    public void depositsAmount() {
         // Mock AccountService to simulate deposit success
         when(accountService.deposit(anyString(), anyDouble())).thenReturn(true);
 
@@ -91,7 +91,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testDeposit_Failed() {
+    public void failsToDepositIfAccountMissing() {
         // Mock AccountService to simulate deposit failure
         when(accountService.deposit(anyString(), anyDouble())).thenReturn(false);
 
@@ -102,7 +102,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testWithdraw_Success() {
+    public void withdrawsAmount() {
         // Mock AccountService to simulate withdrawal success
         when(accountService.withdraw(anyString(), anyDouble())).thenReturn(true);
 
@@ -113,7 +113,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testWithdraw_Failed() {
+    public void failsToWithdrawIfBalanceLowOrAccountMissing() {
         // Mock AccountService to simulate withdrawal failure
         when(accountService.withdraw(anyString(), anyDouble())).thenReturn(false);
 
@@ -124,7 +124,7 @@ public class AccountControllerTest {
     }
 
     @Test
-    public void testGetAccountDetails_Success() {
+    public void getsAccountDetails() {
         // Mock Account with correct data
         account.setAccountNumber("NEX324939864");
         account.setIban("DE43500202220324939864");
@@ -151,9 +151,8 @@ public class AccountControllerTest {
         assert(responseBody.get("currency").equals("EUR"));
     }
 
-
     @Test
-    public void testGetAccountDetails_Failed() {
+    public void failsToGetAccountDetailsIfAccountMissing() {
         // Mock AccountService to return an empty optional (account not found)
         when(accountService.findAccountByAccountNumber(anyString())).thenReturn(Optional.empty());
 

@@ -3,13 +3,11 @@ package com.nexgen.bankingsystem.controller;
 import com.nexgen.bankingsystem.service.CurrencyConversionService;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -28,7 +26,7 @@ public class CurrencyConversionControllerTest {
 
     @Test
     @WithMockUser(username = "user", roles = "USER")
-    public void testConvertCurrency_Success() throws Exception {
+    public void testConvertCurrencySuccess() throws Exception {
         String from = "EUR";
         String to = "USD";
         double amount = 100.0;
@@ -52,7 +50,7 @@ public class CurrencyConversionControllerTest {
 
     @Test
     @WithMockUser(username = "user", roles = "USER")
-    public void testConvertCurrency_Error() throws Exception {
+    public void testConvertCurrencyError() throws Exception {
         String from = "EUR";
         String to = "USD";
         double amount = 100.0;

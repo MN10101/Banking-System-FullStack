@@ -15,13 +15,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
-
 import java.sql.Date;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -57,7 +55,7 @@ public class AuthControllerTest {
     private AccountService accountService;
 
     @Test
-    public void testRegisterUser_Success() throws Exception {
+    public void registersUser() throws Exception {
         User user = new User();
         user.setFirstName("John");
         user.setLastName("Ho");
@@ -85,7 +83,7 @@ public class AuthControllerTest {
     }
 
     @Test
-    public void testRegisterUser_EmailAlreadyInUse() throws Exception {
+    public void failsToRegisterIfEmailTaken() throws Exception {
         User user = new User(
                 "jon@me.com",
                 "John",
@@ -110,10 +108,8 @@ public class AuthControllerTest {
                 .andExpect(content().string("Email is already in use."));
     }
 
-
-
     @Test
-    public void testVerifyUser_Success() throws Exception {
+    public void verifiesUser() throws Exception {
         String token = "validToken123";
         User user = new User();
         user.setEnabled(false);
@@ -133,7 +129,7 @@ public class AuthControllerTest {
     }
 
     @Test
-    public void testVerifyUser_InvalidToken() throws Exception {
+    public void failsToVerifyWithInvalidToken() throws Exception {
         String token = "invalidToken";
 
         // Mock service to return null for invalid token
@@ -144,9 +140,8 @@ public class AuthControllerTest {
                 .andExpect(jsonPath("$.message").value("Invalid or expired verification token."));
     }
 
-
     @Test
-    public void testLoginUser_Success() throws Exception {
+    public void logsInUser() throws Exception {
         String email = "john@me.com";
         String password = "password123";
         User user = new User();
@@ -173,7 +168,7 @@ public class AuthControllerTest {
     }
 
     @Test
-    public void testLoginUser_InvalidCredentials() throws Exception {
+    public void failsToLoginWithInvalidCredentials() throws Exception {
         String email = "john@me.com";
         String password = "wrongPassword";
 

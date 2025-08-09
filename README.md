@@ -51,6 +51,11 @@ mvn clean install
 mvn spring-boot:run
 ```
 
+## Testing
+
+This project includes unit tests written with **JUnit** and **Mockito** to ensure code reliability and maintainability.
+
+
 #### Running Tests 🧪
 ```bash
 mvn test
